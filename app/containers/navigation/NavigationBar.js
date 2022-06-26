@@ -60,6 +60,14 @@ export const NavigationBar = () => {
       >
         Down Payment
       </NavigationLink>
+      <NavigationLink
+        active={pathname === "/appraisal_stats"}
+        disabled={false}
+        id="appraisal_stats"
+        onClick={onClick}
+      >
+        Appraisal Stats
+      </NavigationLink>
     </Flex>
   );
 };
