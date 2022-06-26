@@ -179,16 +179,16 @@ contract CollateralEngine is Ownable {
     emit UpdatedEstimatedValues(msg.sender, _token_id, _floor);
   }
 
-  // function fetch_price(uint _token_id) external {
-  //     // make an API call to update the appraisal price for the token
-  //     string memory url = string(
-  //                             abi.encodePacked(
-  //                                 "http://3.91.48.214:5000/?token_id=",
-  //                                 Strings.toString(_token_id)
-  //                             )
-  //                         );
-  //     chainlink.requestData(url, _token_id);
-  // }
+  function fetch_price(uint _token_id) external {
+      // make an API call to update the appraisal price for the token
+      string memory url = string(
+                              abi.encodePacked(
+                                  "http://3.91.48.214:5000/?token_id=",
+                                  Strings.toString(_token_id)
+                              )
+                          );
+      chainlink.requestData(url, _token_id);
+  }
 
   receive() external payable {
     console.log("Received");
